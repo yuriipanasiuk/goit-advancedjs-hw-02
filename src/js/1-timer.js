@@ -1,7 +1,7 @@
 import flatpickr from 'flatpickr';
-import iziToast from 'izitoast';
 import 'flatpickr/dist/flatpickr.min.css';
-import 'izitoast/dist/css/iziToast.min.css';
+
+import iziToast from './helpers/toast.js';
 import { convertMs } from './helpers/convertMs.js';
 import { addLeadingZero } from './helpers/addLeadingZero.js';
 
@@ -27,10 +27,7 @@ const options = {
 
     if (selectedDate.getTime() <= Date.now()) {
       iziToast.show({
-        backgroundColor: 'red',
-        position: 'topRight',
-        progressBar: false,
-        messageColor: 'white',
+        backgroundColor: '#E26353',
         message: 'Please choose a date in the future',
       });
 
